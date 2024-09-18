@@ -1,4 +1,4 @@
-name,image
-vm1,Canonical:UbuntuServer:18.04-LTS:latest
-vm2,MicrosoftWindowsServer:WindowsServer:2019-Datacenter:latest
-vm3,Canonical:UbuntuServer:20.04-LTS:latest
+name,image,size
+vm1,Canonical:UbuntuServer:18.04-LTS:latest,Standard_DS1_v2
+vm2,MicrosoftWindowsServer:WindowsServer:2019-Datacenter:latest,Standard_DS2_v2
+vm3,Canonical:UbuntuServer:20.04-LTS:latest,Standard_DS3_v2
