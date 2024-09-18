@@ -21,7 +21,7 @@ resource "azurerm_virtual_machine" "vm" {
   location              = var.location
   resource_group_name   = azurerm_resource_group.vm_rg.name
   network_interface_ids = [azurerm_network_interface.vm_nic.id]
-  vm_size               = var.vm_size
+  vm_size               = each.value.size  # VM size comes from CSV
 
   storage_image_reference {
     publisher = element(split(":", each.value.image), 0)
@@ -40,7 +40,7 @@ resource "azurerm_virtual_machine" "vm" {
   os_profile {
     computer_name  = each.value.name
     admin_username = "azureuser"
-    admin_password = "Password123!" # Use environment variable or secret in real scenarios
+    admin_password = "Password123!"  # Use secrets or environment variables in real scenarios
   }
 
   os_profile_linux_config {
